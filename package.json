@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "bolo",
+=======
+  "name": "site-bolos",
+>>>>>>> 5e72a5a332bd9d5a3144198df2eeb91feb2f1976
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,8 +20,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+<<<<<<< HEAD
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+=======
+>>>>>>> 5e72a5a332bd9d5a3144198df2eeb91feb2f1976
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,9 +45,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
   },
   "homepage": "https://yanlt32.github.io/bolo"
+=======
+  }
+>>>>>>> 5e72a5a332bd9d5a3144198df2eeb91feb2f1976
 }
