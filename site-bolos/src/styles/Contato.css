@@ -1,0 +1,97 @@
+/* Estilos para o container de contato */
+.contato-container {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    background-color: #F1E4D1; /* Cor bege suave como fundo */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contato-container h1 {
+    color: #6F4F1F; /* Cor de chocolate para o título */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contato-container p {
+    font-size: 1.2rem;
+    color: #4D2C1D; /* Cor marrom escuro para o texto */
+    margin-bottom: 15px;
+}
+
+/* Estilos para o botão "Entrar em Contato" */
+.contato-btn {
+    background-color: #6F4F1F; /* Cor de chocolate para o fundo */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.contato-btn:hover {
+    background-color: #4E3B2E; /* Cor mais escura de chocolate no hover */
+    transform: translateY(-5px);
+}
+
+/* Estilos para o formulário de contato (opcional) */
+.contato-form {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #6F4F1F; /* Cor de chocolate para a borda */
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #4D2C1D; /* Cor marrom escuro para o texto */
+    background-color: white;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contato-form input::placeholder,
+.contato-form textarea::placeholder {
+    color: #B88A6F; /* Cor de marrom claro para o placeholder */
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+    border-color: #6F4F1F; /* Cor de chocolate para o foco */
+    box-shadow: 0 0 8px rgba(111, 79, 31, 0.5); /* Sombras de chocolate */
+}
+
+.contato-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-container {
+        padding: 40px 15px;
+    }
+
+    .contato-container h1 {
+        font-size: 2rem;
+    }
+
+    .contato-container p {
+        font-size: 1rem;
+    }
+
+    .contato-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}

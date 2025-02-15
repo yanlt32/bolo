@@ -1,0 +1,141 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f6f2; /* Cor de fundo suave, como o tom claro de chocolate */
+    color: #4D2C1D; /* Cor marrom escuro para o texto */
+    line-height: 1.6;
+    padding-top: 70px; /* Ajuste esse valor conforme a altura do seu cabeçalho */
+}
+
+/* Header */
+.header {
+    background-color: #FFF8F0; /* Cor de fundo suave, para combinar com o resto do site */
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.header .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px; /* Reduzido o padding */
+}
+
+.header .logo img {
+    width: 85px; /* Reduzido o tamanho do logotipo */
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Reduzido o gap entre os itens do menu */
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #4D2C1D; /* Cor de chocolate para os links */
+    padding: 0.5em 0.4em; /* Reduzido o padding dos links */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header nav ul li a:hover {
+    background-color: #6F4F1F; /* Cor de chocolate para o hover */
+    color: white;
+}
+
+/* Linha amarela abaixo do cabeçalho */
+.header::after {
+    content: '';
+    display: block;
+    height: 3px; /* Reduzido a altura da linha */
+    background-color: #FFD700; /* Cor da linha amarela */
+}
+
+/* Mobile Menu */
+.header .mobile-icon {
+    cursor: pointer;
+    display: none; /* Escondido por padrão */
+    padding: 20px 15px; /* Reduzido o padding */
+}
+
+.header .mobile-icon .hamburguer {
+    background: #4D2C1D; /* Cor de chocolate para a hamburguer */
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+}
+
+.header .mobile-icon .hamburguer:before,
+.header .mobile-icon .hamburguer:after {
+    background: #4D2C1D; /* Cor de chocolate para as partes da hamburguer */
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+}
+
+.header .mobile-icon .hamburguer:before {
+    top: 5px;
+}
+
+.header .mobile-icon .hamburguer:after {
+    top: -5px;
+}
+
+.header .mobile-btn {
+    display: none; /* Escondido por padrão */
+}
+
+.header .mobile-btn:checked ~ nav ul {
+    max-height: 240px; /* Ajuste conforme necessário */
+}
+
+.header .mobile-btn:checked ~ .mobile-icon .hamburguer {
+    background: transparent;
+}
+
+.header .mobile-btn:checked ~ .mobile-icon .hamburguer:before {
+    transform: rotate(-45deg);
+}
+
+.header .mobile-btn:checked ~ .mobile-icon .hamburguer:after {
+    transform: rotate(45deg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header .mobile-icon {
+        display: inline-block; /* Mostra o ícone do menu em dispositivos móveis */
+    }
+
+    .header nav ul {
+        display: none; /* Esconde o menu em dispositivos móveis */
+        flex-direction: column; /* Alinha os itens verticalmente */
+        max-height: 0; /* Esconde o menu */
+        overflow: hidden; /* Esconde o conteúdo que excede a altura */
+        transition: max-height 0.2s ease-out; /* Transição suave */
+    }
+
+    .header .mobile-btn:checked ~ nav ul {
+        display: flex; /* Mostra o menu quando o botão está checado */
+        max-height: 240px; /* Ajuste conforme necessário */
+    }
+
+    .header nav ul li {
+        padding: 8px 0; /* Reduzido o espaçamento entre os itens do menu */
+    }
+}

@@ -1,0 +1,229 @@
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner h1 {
+    font-size: 4rem; /* Tamanho da fonte padrão para desktop */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+    padding: 0 20px; /* Adiciona padding para evitar que o texto encoste nas bordas */
+}
+
+/* Estilos para a seção de introdução */
+.intro {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 40px auto 0;
+    text-align: center;
+    background-color: #f9f3e4; /* Um fundo suave para destacar a seção */
+    border-radius: 10px; /* Bordas arredondadas para suavizar a aparência */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+}
+
+.intro p {
+    font-size: 1.3rem; /* Aumentando um pouco o tamanho da fonte */
+    color: #4D2C1D;
+    line-height: 1.8;
+    font-weight: 500; /* Um pouco de peso na fonte para mais ênfase */
+    margin-bottom: 20px; /* Um pequeno espaçamento abaixo */
+}
+
+.intro p::before {
+    content: "🍰"; /* Um ícone divertido para dar mais personalidade */
+    font-size: 2rem;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* Estilos para a galeria de bolos em destaque */
+.destaque-bolos {
+    padding: 60px 20px;
+    background-color: #FFF8F0;
+}
+
+.destaque-bolos h2 {
+    text-align: center;
+    color: #4D2C1D;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.bolos-grid {
+    display: flex;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte se necessário */
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%; /* Garante que o contêiner ocupe toda a largura */
+    max-width: 1200px; /* Limita a largura máxima da galeria */
+    margin-left: auto; /* Centraliza o contêiner horizontalmente */
+    margin-right: auto; /* Centraliza o contêiner horizontalmente */
+}
+
+
+.bolo-card {
+    width: 250px; /* Ajuste a largura do card */
+    margin: 15px;  /* Espaçamento entre os cards */
+    text-align: center; /* Centraliza o texto dentro do card */
+    background-color: #fff; /* Cor de fundo branca para o card */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 10px; /* Espaçamento interno */
+    display: flex; /* Flexbox para garantir que o conteúdo do card seja centralizado */
+    flex-direction: column; /* Coloca a imagem e texto em coluna */
+    align-items: center; /* Alinha os itens (imagem e texto) ao centro */
+    justify-content: space-between; /* Espaçamento entre os itens */
+}   
+.bolo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.bolo-card img {
+    width: 100%;  /* A imagem ocupa 100% da largura do card */
+    height: 150px; /* Defina a altura para a imagem */
+    object-fit: cover; /* Faz a imagem cobrir o espaço do card sem distorcer */
+    border-radius: 8px; /* Borda arredondada na imagem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra (opcional) */
+}
+
+.bolo-card h3 {
+    font-size: 1.4rem;
+    padding: 15px;
+    color: #4D2C1D;
+    text-align: center;
+}
+
+.bolo-card p {
+    padding: 0 15px 15px;
+    color: #666666;
+    text-align: center;
+}
+
+/* Estilos para a seção de depoimentos */
+.depoimentos {
+    padding: 60px 20px;
+    background-color: #4D2C1D;
+    color: white;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.depoimento-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.depoimento-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.depoimento-card span {
+    font-weight: 600;
+    color: #FF6F61;
+}
+
+/* Estilos para o botão de chamada para ação (CTA) */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FF6F61;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta button {
+    background-color: #4D2C1D;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta button:hover {
+    background-color: #3B1F14;
+    transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Altura reduzida para dispositivos móveis */
+    }
+
+    .banner h1 {
+        font-size: 2.5rem; /* Tamanho da fonte reduzido para dispositivos móveis */
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .destaque-bolos h2,
+    .depoimentos h2,
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    /* Ajustes para centralizar os grids e os cards */
+    .bolos-grid,
+    .depoimentos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: center; /* Centraliza o grid */
+        gap: 1rem; /* Espaçamento entre os cards */
+        padding: 0 6rem; /* Padding nas laterais */
+        margin: 0 auto; /* Centraliza o grid no contêiner pai */
+        max-width: 100%; /* Garante que o grid não ultrapasse a largura do contêiner */
+    }
+
+    /* Centraliza o conteúdo dentro dos cards */
+    .bolos-grid .card,
+    .depoimentos-grid .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Centraliza o texto */
+        justify-content: center; /* Centraliza verticalmente (opcional) */
+    }
+    .banner::before {
+        display: none; /* Remove o overlay em dispositivos móveis */
+    }
+}
