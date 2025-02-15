@@ -1,0 +1,40 @@
+/* Estilos para o footer */
+footer {
+    background-color: #4D2C1D;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #FF6F61;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FF3B2F;
+    text-decoration: underline;
+}
+
+/* Estilos para o link do GitHub */
+.github-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 15px;
+        font-size: 0.9rem;
+    }
+}
