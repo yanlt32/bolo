@@ -1,0 +1,22 @@
+/* Define a animação para os elementos que irão aparecer */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Move o elemento para baixo inicialmente */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move o elemento para a posição original */
+    }
+}
+
+/* Aplica a animação nos elementos com a classe 'fade-in' */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Classe que será adicionada quando o elemento aparecer */
+.fade-in-visible {
+    opacity: 1;
+}
