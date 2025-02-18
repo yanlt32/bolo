@@ -7,40 +7,47 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f6f2; /* Cor de fundo suave, como o tom claro de chocolate */
+    background-color: #f9f6f2; /* Cor de fundo suave */
     color: #4D2C1D; /* Cor marrom escuro para o texto */
     line-height: 1.6;
-    padding-top: 70px; /* Ajuste esse valor conforme a altura do seu cabeçalho */
+    margin-top: 70px; /* Define o espaçamento superior do conteúdo */
 }
 
 /* Header */
 .header {
-    background-color: #FFF8F0; /* Cor de fundo suave, para combinar com o resto do site */
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 248, 240, 0.7); /* Cor de fundo suave e transparente */
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Mantém o sombreado */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1;
+    height: 70px; /* Altura fixa do cabeçalho */
+    padding: 10px 0; /* Ajuste o padding do cabeçalho */
+    backdrop-filter: blur(10px); /* Aplica um desfoque no fundo atrás do cabeçalho */
 }
 
+/* Conteúdo do cabeçalho */
 .header .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 15px; /* Reduzido o padding */
+    padding: 5px 15px;
 }
 
 .header .logo img {
     width: 85px; /* Reduzido o tamanho do logotipo */
 }
 
+/* Menu de navegação */
 .header nav ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduzido o gap entre os itens do menu */
+    gap: 20px; /* Aumentado o espaço entre os itens */
+    transition: transform 0.3s ease-in-out; /* Animação suave para o menu */
 }
 
+/* Links do menu */
 .header nav ul li a {
     text-decoration: none;
     color: #4D2C1D; /* Cor de chocolate para os links */
@@ -51,14 +58,6 @@ body {
 .header nav ul li a:hover {
     background-color: #6F4F1F; /* Cor de chocolate para o hover */
     color: white;
-}
-
-/* Linha amarela abaixo do cabeçalho */
-.header::after {
-    content: '';
-    display: block;
-    height: 3px; /* Reduzido a altura da linha */
-    background-color: #FFD700; /* Cor da linha amarela */
 }
 
 /* Mobile Menu */
@@ -74,7 +73,7 @@ body {
     height: 2px;
     position: relative;
     transition: background 0.2s ease-out;
-    width: 18px;
+    width: 20px; /* Aumentado o tamanho */
 }
 
 .header .mobile-icon .hamburguer:before,
@@ -82,60 +81,88 @@ body {
     background: #4D2C1D; /* Cor de chocolate para as partes da hamburguer */
     content: '';
     display: block;
-    height: 100%;
+    height: 2px; /* Tamanho ajustado */
     position: absolute;
     transition: all 0.2s ease-out;
     width: 100%;
 }
 
 .header .mobile-icon .hamburguer:before {
-    top: 5px;
-}
-
-.header .mobile-icon .hamburguer:after {
     top: -5px;
 }
 
+.header .mobile-icon .hamburguer:after {
+    top: 5px;
+}
+
+/* Botão de controle do menu (escondido por padrão) */
 .header .mobile-btn {
     display: none; /* Escondido por padrão */
 }
 
+/* Menu aberto */
 .header .mobile-btn:checked ~ nav ul {
+    transform: translateX(0); /* Alinha o menu na tela */
     max-height: 240px; /* Ajuste conforme necessário */
+    display: flex; /* Mostra o menu */
+    flex-direction: column; /* Alinha os itens verticalmente */
 }
 
 .header .mobile-btn:checked ~ .mobile-icon .hamburguer {
-    background: transparent;
+    background: transparent; /* Transforma a cor do hambúrguer */
 }
 
 .header .mobile-btn:checked ~ .mobile-icon .hamburguer:before {
-    transform: rotate(-45deg);
+    transform: rotate(-45deg); /* Rotaciona para formar um "X" */
 }
 
 .header .mobile-btn:checked ~ .mobile-icon .hamburguer:after {
-    transform: rotate(45deg);
+    transform: rotate(45deg); /* Rotaciona para formar um "X" */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
+    /* Ícone do menu */
     .header .mobile-icon {
         display: inline-block; /* Mostra o ícone do menu em dispositivos móveis */
     }
 
+    /* Itens do menu */
     .header nav ul {
-        display: none; /* Esconde o menu em dispositivos móveis */
-        flex-direction: column; /* Alinha os itens verticalmente */
-        max-height: 0; /* Esconde o menu */
-        overflow: hidden; /* Esconde o conteúdo que excede a altura */
-        transition: max-height 0.2s ease-out; /* Transição suave */
+        display: flex; /* Exibe o menu como flexbox */
+        flex-direction: column; /* Organiza os itens em uma coluna */
+        gap: 20px; /* Aumenta o espaçamento entre os itens */
+        position: absolute;
+        top: 70px; /* Abaixo do cabeçalho */
+        left: 0;
+        right: 0;
+        background-color: #fff; /* Cor de fundo do menu */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transform: translateX(-100%); /* Inicialmente escondido à esquerda */
+        padding: 20px;
     }
 
+    /* Quando o botão estiver marcado, o menu será mostrado */
     .header .mobile-btn:checked ~ nav ul {
-        display: flex; /* Mostra o menu quando o botão está checado */
-        max-height: 240px; /* Ajuste conforme necessário */
+        transform: translateX(0); /* Move o menu para a tela */
     }
 
-    .header nav ul li {
-        padding: 8px 0; /* Reduzido o espaçamento entre os itens do menu */
+    /* Estilo do link no menu */
+    .header nav ul li a {
+        color: #4D2C1D; /* Cor dos links */
+        padding: 15px; /* Ajustado o padding */
+        text-align: center;
+        font-size: 18px; /* Aumentado o tamanho da fonte */
     }
+
+    /* Estilo do botão de fechamento (X) */
+    .header nav ul li a:hover {
+        background-color: #6F4F1F;
+        color: white;
+    }
+}
+
+/* Ajuste do conteúdo abaixo do cabeçalho */
+main {
+    padding-top: 80px; /* Define um espaçamento confortável para o conteúdo abaixo do cabeçalho */
 }

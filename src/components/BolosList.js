@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Adicione esta linha
 import bolo1 from '../assets/bolo1.png'; // Importe as imagens
 import bolo2 from '../assets/bolo2.png';
 import bolo3 from '../assets/bolo3.png';
@@ -6,6 +7,7 @@ import bolo4 from '../assets/bolo4.png';
 // Adicione outras imagens conforme necessário
 
 const BolosList = ({ searchTerm, selectedCategory }) => {
+    const navigate = useNavigate();
     const bolos = [
         { id: 172, nome: "Delícia de Leite com Abacaxi Zero Açúcar", imagem: bolo1, categoria: "frutas" },
         { id: 171, nome: "Delícia de Leite Ninho com Abacaxi", imagem: bolo2, categoria: "frutas" },
@@ -33,7 +35,12 @@ const BolosList = ({ searchTerm, selectedCategory }) => {
                 <div key={bolo.id} className="bolo-card">
                     <img src={bolo.imagem} alt={bolo.nome} />
                     <h3>{bolo.nome}</h3>
-                    <button className="bolo-button">Eu Quero</button>
+                    <button
+                        className="bolo-button"
+                        onClick={() => navigate(`/bolo/${bolo.id}`)} // Redireciona para a página de detalhes
+                    >
+                        Eu Quero
+                    </button>
                 </div>
             ))}
         </div>

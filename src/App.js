@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Bolos from './pages/Bolos';
 import Contato from './pages/Contato';
+import BoloDetalhes from './pages/BoloDetalhes';
+import './styles/BoloDetalhes.css';
 import './styles/Header.css'; // Estilos do Header
 import './styles/Home.css'; // Estilos da página Home
 import './styles/Bolos.css'; // Estilos da página Bolos
@@ -20,6 +22,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/bolos" element={<Bolos />} />
+                    <Route path="/bolo/:id" element={<BoloDetalhes />} /> {/* Rota para detalhes do bolo */}
                     <Route path="/contato" element={<Contato />} />
                 </Routes>
                 <Footer />
